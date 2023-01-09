@@ -45,7 +45,9 @@ dependencies:
   geocoding: ^2.0.5
   custom_info_window: ^1.0.1
   flutter_custom_clippers: ^2.1.0
-  # firebase_core: ^2.4.0
+  email_validator: ^2.1.16
+  shared_preferences: ^2.0.15
+  firebase_auth: ^4.2.5
 
 dev_dependencies:
   flutter_test:

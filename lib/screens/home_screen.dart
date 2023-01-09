@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:visitora/colors/app_colors.dart';
+import 'package:visitora/managers/authentication_manager.dart';
 import 'package:visitora/provider/favourite_provider.dart';
 import 'package:visitora/screens/detail_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:visitora/screens/login_screen.dart';
 import 'package:visitora/widgets/custom_circular_indicator.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -27,7 +29,26 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: AppColors.background,
       appBar: AppBar(
-        title: const Text('ORADEA'),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Padding(
+              padding: EdgeInsets.only(left: 10.0),
+              child: Text('ORADEA'),
+            ),
+            IconButton(
+                icon: const Icon(Icons.logout),
+                onPressed: (() {
+                  AuthenticationManager.signOutUser();
+
+                  Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute(
+                          builder: (context) => const LoginScreen()),
+                      (route) => false);
+                })),
+          ],
+        ),
+        automaticallyImplyLeading: false,
         backgroundColor: AppColors.navBar,
       ),
       body: StreamBuilder<QuerySnapshot>(
