@@ -56,7 +56,6 @@ class _QRScannerScreenState extends State<QRScannerScreen> {
                                   BorderRadius.all(Radius.circular(5))),
                         ),
                         onPressed: () {
-                          // Navigator.of(context).pop();
                           Navigator.pop(context);
                           Navigator.push(
                               context,
@@ -76,14 +75,6 @@ class _QRScannerScreenState extends State<QRScannerScreen> {
 
                         widget.listOfSights!.forEach((sight) {
                           if (sight!['title'].contains(result!.code)) {
-                            // Navigator.push(
-                            //     context,
-                            //     MaterialPageRoute(
-                            //       builder: (context) => SightDetailScreen(
-                            //         detailedSight: sight,
-                            //         previousScreen: 2,
-                            //       ),
-                            //     ));
                             Navigator.of(context).pushAndRemoveUntil(
                                 MaterialPageRoute(
                                   builder: (context) => SightDetailScreen(

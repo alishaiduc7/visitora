@@ -68,8 +68,10 @@ class _HomeScreenState extends State<HomeScreen> {
               return ListView.builder(
                 itemCount: snapshot.data?.docs.length,
                 itemBuilder: (context, index) {
-                  if (provider.listOfSights.length < 16) {
-                    provider.listOfSights.add(snapshot.data?.docs[index]);
+                  if (provider.listOfSights == null) {
+                    provider.listOfSights = [];
+                  } else if (provider.listOfSights!.length < 16) {
+                    provider.listOfSights!.add(snapshot.data!.docs[index]);
                   }
 
                   return Container(
@@ -137,7 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       icon: Icon(
                                         Icons.favorite_rounded,
                                         color: provider.existsSightInFaves(
-                                                snapshot.data?.docs[index])
+                                                snapshot.data!.docs[index])
                                             ? const Color.fromARGB(
                                                 255, 191, 73, 88)
                                             : AppColors.background,

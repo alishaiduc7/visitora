@@ -17,7 +17,7 @@ class FavouritesScreen extends StatelessWidget {
         title: const Text('Favourites'),
         backgroundColor: AppColors.navBar,
       ),
-      body: favouriteSights!.isEmpty
+      body: favouriteSights == null || favouriteSights!.isEmpty
           ? Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               const Center(
                 child: Text('You have no favourites yet!',
@@ -94,7 +94,7 @@ class FavouritesScreen extends StatelessWidget {
                                     icon: Icon(
                                       Icons.favorite_rounded,
                                       color: provider.existsSightInFaves(
-                                              favouriteSights![index])
+                                              favouriteSights![index]!)
                                           ? const Color.fromARGB(
                                               255, 191, 73, 88)
                                           : AppColors.background,
