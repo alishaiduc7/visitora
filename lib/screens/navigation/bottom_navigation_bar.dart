@@ -23,7 +23,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     MapScreen(),
     QRScannerScreen(),
     FavouritesScreen(),
-    const RouteScreen()
+    RouteScreen()
   ];
 
   final PageStorageBucket bucket = PageStorageBucket();
