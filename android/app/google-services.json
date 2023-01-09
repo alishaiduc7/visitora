@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "61886807458",
+    "project_id": "visitora-6cee3",
+    "storage_bucket": "visitora-6cee3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:61886807458:android:b6f10fea10f1a0671306fb",
+        "android_client_info": {
+          "package_name": "com.example.visitora"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "61886807458-aaa37rhcjonvm169t2i1p7isog74mcns.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjHZShs7klgE6HdiJLGXAjmjNmQdUH5xU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "61886807458-aaa37rhcjonvm169t2i1p7isog74mcns.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
