@@ -23,7 +23,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // List<QueryDocumentSnapshot> sightsList;
     final provider = Provider.of<FavouriteProvider>(context);
     return Scaffold(
       backgroundColor: AppColors.background,
@@ -48,8 +47,9 @@ class _HomeScreenState extends State<HomeScreen> {
               return ListView.builder(
                 itemCount: snapshot.data?.docs.length,
                 itemBuilder: (context, index) {
-                  if (provider.listOfSights.length < 16)
+                  if (provider.listOfSights.length < 16) {
                     provider.listOfSights.add(snapshot.data?.docs[index]);
+                  }
 
                   return Container(
                     padding:

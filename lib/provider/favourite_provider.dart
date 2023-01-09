@@ -3,7 +3,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class FavouriteProvider extends ChangeNotifier {
-  // FavouriteProvider(List<Sight> sights);
   List<QueryDocumentSnapshot?> favouriteSights = [];
   late List<QueryDocumentSnapshot?> listOfSights = [];
 

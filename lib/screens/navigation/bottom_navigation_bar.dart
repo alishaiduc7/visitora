@@ -19,20 +19,19 @@ class _BottomNavBarState extends State<BottomNavBar> {
   int currentTabIndex = 0;
 
   final List screens = [
-    HomeScreen(),
+    const HomeScreen(),
     MapScreen(),
     QRScannerScreen(),
     FavouritesScreen(),
-    RouteScreen()
+    const RouteScreen()
   ];
 
   final PageStorageBucket bucket = PageStorageBucket();
-  Widget currentScreen = HomeScreen();
+  Widget currentScreen = const HomeScreen();
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<FavouriteProvider>(context);
     return Scaffold(
-      // body: screens[currentTabIndex],
       body: PageStorage(
         bucket: bucket,
         child: currentScreen,
@@ -71,7 +70,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                     MaterialButton(
                       onPressed: () {
                         setState(() {
-                          currentScreen = HomeScreen();
+                          currentScreen = const HomeScreen();
                           currentTabIndex = 0;
                         });
                       },
@@ -128,63 +127,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
               ]),
         ),
       ),
-      // bottomNavigationBar: Container(
-      //   height: 70,
-      //   decoration: BoxDecoration(color: AppColors.navBar),
-      //   child: BottomNavigationBar(
-      //     currentIndex: currentTabIndex,
-      //     fixedColor: AppColors.navBar,
-      //     backgroundColor: AppColors.navBar,
-      //     onTap: (index) {
-      //       setState(() {
-      //         currentTabIndex = index;
-      //       });
-      //     },
-      //     items: [
-      //       BottomNavigationBarItem(
-      //         icon: const Icon(
-      //           Icons.home_outlined,
-      //           color: Colors.white,
-      //         ),
-      //         backgroundColor: AppColors.navBar,
-      //         label: '',
-      //       ),
-      //       BottomNavigationBarItem(
-      //         icon: const Icon(
-      //           Icons.map_outlined,
-      //           color: Colors.white,
-      //         ),
-      //         label: '',
-      //         backgroundColor: AppColors.navBar,
-      //       ),
-
-      //       // BottomNavigationBarItem(
-      //       //   icon: const Icon(
-      //       //     Icons.qr_code_scanner_outlined,
-      //       //     color: Colors.white,
-      //       //   ),
-      //       //   label: '',
-      //       //   backgroundColor: AppColors().navBar,
-      //       // ),
-      //       BottomNavigationBarItem(
-      //         icon: const Icon(
-      //           Icons.favorite_outline,
-      //           color: Colors.white,
-      //         ),
-      //         label: '',
-      //         backgroundColor: AppColors.navBar,
-      //       ),
-      //       BottomNavigationBarItem(
-      //         icon: const Icon(
-      //           Icons.place_outlined,
-      //           color: Colors.white,
-      //         ),
-      //         label: '',
-      //         backgroundColor: AppColors.navBar,
-      //       ),
-      //     ],
-      //   ),
-      // ),
     );
   }
 }

@@ -111,15 +111,14 @@ class _SightDetailScreenState extends State<SightDetailScreen>
                           MaterialPageRoute(
                             builder: (context) => const BottomNavBar(),
                           ));
-                    } else
+                    } else {
                       Navigator.pop(context);
+                    }
                   })),
               backgroundColor: AppColors.navBar,
             ),
             body: SingleChildScrollView(
-              child:
-                  // padding: const EdgeInsets.only(right: 20, left: 20),
-                  Column(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ClipRRect(
@@ -168,7 +167,7 @@ class _SightDetailScreenState extends State<SightDetailScreen>
                         ),
                         child: Scrollbar(
                           interactive: true,
-                          isAlwaysShown: true,
+                          thumbVisibility: true,
                           thickness: 3,
                           showTrackOnHover: true,
                           controller: _scrollController1,
@@ -251,9 +250,6 @@ class _SightDetailScreenState extends State<SightDetailScreen>
                           return const CustomLoadingIndicator();
                         }
                         if (snapshot.hasData) {
-                          int idx = 0;
-                          int listIndex = 0;
-                          List<String> lista;
                           return CarouselSlider(
                             options: CarouselOptions(
                                 height: 300.0,
