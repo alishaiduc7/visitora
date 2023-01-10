@@ -143,6 +143,12 @@ class _MapScreenState extends State<MapScreen> {
     super.dispose();
   }
 
+  List<PolylineWayPoint> polylineWayPoints = [];
+  addToWayPoint(LatLng location) {
+    polylineWayPoints.add(PolylineWayPoint(
+        location: "${location.latitude},${location.longitude}"));
+  }
+
   getPolyPoints() async {
     PolylinePoints polylinePoints = PolylinePoints();
 
