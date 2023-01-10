@@ -192,6 +192,7 @@ class _MapScreenState extends State<MapScreen> {
 
   @override
   Widget build(BuildContext context) {
+    //tried to change the detail info window for each marker so I could add the markers to the waypoints list
     // int index, i = 0;
     // for (index = 0; index < widget.listOfSights!.length; index++) {
     //   markers.add(Marker(

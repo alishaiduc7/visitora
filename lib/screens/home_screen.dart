@@ -52,7 +52,6 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: AppColors.navBar,
       ),
       body: StreamBuilder<QuerySnapshot>(
-          //emits a new value whenever data is changed in the collection & rebuilt children
           stream: _locationsStream,
           builder:
               (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {

@@ -12,11 +12,13 @@ class FavouriteProvider extends ChangeNotifier {
     int index = 0;
     if (favouriteSights != null) {
       favouriteSights!.forEach((sightTitle) {
-        if (sightTitle['title'].contains(faveSight!['title'])) {
-          isFavourite = true;
-          return;
+        if (isFavourite != true) {
+          if (sightTitle['title'].contains(faveSight!['title'])) {
+            isFavourite = true;
+            return;
+          }
+          index++;
         }
-        index++;
       });
     }
     if (isFavourite) {
